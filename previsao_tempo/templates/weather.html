@@ -5,22 +5,21 @@
 <head>
     <title>Previsão do Tempo</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-
-
-
 </head>
 <body>
-    <h1>Previsão do Tempo</h1>
-    <form method="GET" action="{% url 'weather_forecast' %}">
-        <input type="text" name="city" placeholder="Digite a cidade" required>
-        <button type="submit">Pesquisar</button>
-    </form>
+    <div class="corpo">
+        <h1>Previsão do Tempo</h1>
+        <form method="GET" action="{% url 'weather_forecast' %}">
+            <input type="text" name="city" placeholder="Digite a cidade" required>
+            <button type="submit">Pesquisar</button>
+        </form>
 
-    {% if city_name %}
-        <h2>Previsão do Tempo para {{ city_name }}</h2>
-        <p>Temperatura mínima: {{ temperature_min }}°C</p>
-        <p>Temperatura máxima: {{ temperature_max }}°C</p>
-        <p>Descrição: {{ description }}</p>
-    {% endif %}
+        {% if city_name %}
+            <h2>Previsão do Tempo para {{ city_name }}</h2>
+            <p>Temperatura mínima: {{ temperature_min }}°C</p>
+            <p>Temperatura máxima: {{ temperature_max }}°C</p>
+            <p>Descrição: {{ description }}</p>
+        {% endif %}
+    </div>
 </body>
 </html>
